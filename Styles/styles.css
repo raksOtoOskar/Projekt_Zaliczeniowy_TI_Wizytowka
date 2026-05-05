@@ -1,0 +1,363 @@
+/* --- ZMIENNE CSS --- */
+:root {
+    --bg-body: #F8F9FA;
+    --bg-container: #ffffff;
+    --bg-dark: #1f2937;
+    --text-main: #374151;
+    --text-light: #f9fafb;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border-color: #e5e7eb;
+}
+
+/* --- STYLE BAZOWE --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-body);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { color: var(--bg-dark); }
+h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
+a { color: var(--accent-color); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--accent-hover); }
+hr { width: 80%; border: none; border-top: 1px solid var(--border-color); margin: 2rem auto; }
+
+/* --- HEADER & NAWIGACJA --- */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.main-nav.active {
+    display: flex;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 600;
+}
+
+.main-nav a:hover, .main-nav a.active-link {
+    color: var(--accent-color);
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* --- SEKCJA HERO --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(31, 41, 55, 0.85), rgba(31, 41, 55, 0.85)), url('https://picsum.photos/1920/1080?grayscale') center/cover no-repeat;
+    color: var(--text-light);
+    padding: 20px;
+}
+
+.hero-content h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* --- GŁÓWNY KONTENER --- */
+.container-main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--bg-container);
+    padding: 60px 5%;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* --- O MNIE --- */
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* --- UMIEJĘTNOŚCI --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.skill-category {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.skill-category li:last-child { border-bottom: none; }
+
+/* --- PROJEKTY --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #f3f4f6;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-content { padding: 25px; }
+.card-content h3 { margin-top: 0; margin-bottom: 10px; }
+.tech-stack { font-size: 0.85rem; font-weight: 700; color: var(--accent-color); margin-bottom: 15px; }
+
+/* --- KONTAKT --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.contact-card:hover { background: #e5e7eb; color: var(--accent-color); }
+.contact-card i { font-size: 1.5rem; color: var(--accent-color); }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border-radius: 8px;
+}
+
+.social-btn:hover { background: var(--text-main); color: var(--text-light); }
+
+/* --- STOPKA & POWRÓT --- */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background-color: var(--bg-dark);
+    color: #9ca3af;
+}
+
+#powrot-na-gore {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+#powrot-na-gore.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#powrot-na-gore:hover { background-color: var(--accent-hover); }
+
+/* --- ANIMACJE SCROLLOWANIA --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: 768px) {
+    .hamburger { display: none; }
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+    .main-nav a { border: none; padding: 10px 15px; }
+    .hero-content h1 { font-size: 4rem; }
+    .container-main { width: 85%; max-width: 1200px; }
+    .about-wrapper { flex-direction: row; }
+    .about-text { flex: 1; }
+    .profile-img { width: 250px; height: 250px; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .cards-wrapper { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: repeat(3, 1fr); }
+}

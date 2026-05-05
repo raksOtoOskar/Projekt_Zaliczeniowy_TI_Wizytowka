@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Oskar Fryc">
+    <meta name="description" content="Oskar Fryc - Portfolio i wizytówka. Programista Python, rozwiązania backendowe i analiza danych.">
+    <title>Oskar Fryc - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="logo-container">
+            <i class="fa-solid fa-code logo-icon"></i>
+            <span class="site-name">Oskar Fryc</span>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Otwórz menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="main-nav" id="main-nav">
+            <a href="#sekcja-o-mnie" class="nav-link"><i class="fa-solid fa-user"></i> <span class="nav-text">O mnie</span></a>
+            <a href="#sekcja-umiejetnosci" class="nav-link"><i class="fa-solid fa-laptop-code"></i> <span class="nav-text">Umiejętności</span></a>
+            <a href="#sekcja-projekty" class="nav-link"><i class="fa-solid fa-folder-open"></i> <span class="nav-text">Projekty</span></a>
+            <a href="#sekcja-kontakt" class="nav-link"><i class="fa-solid fa-envelope"></i> <span class="nav-text">Kontakt</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero-section">
+            <div class="hero-content">
+                <h1 id="hero-heading">Cześć, jestem Oskar</h1>
+                <p>Student Informatyki i Ekonometrii na AGH. Specjalizuję się w Pythonie, analizie danych (Data Science) i rozwiązaniach backendowych.</p>
+                <a href="#sekcja-projekty" class="cta-button">Zobacz moje projekty</a>
+            </div>
+        </section>
+
+        <div class="container-main">
+            
+            <section class="container fade-in-section" id="sekcja-o-mnie">
+                <h2>O mnie</h2>
+                <div class="about-wrapper">
+                    <div class="about-text">
+                        <p>Jestem studentem czwartego semestru Informatyki i Ekonometrii na Akademii Górniczo-Hutniczej w Krakowie. Posiadam silne zaplecze analityczne, doświadczenie w przedsiębiorczości oraz praktyczną wiedzę z zakresu Pythona. Aktywnie poszukuję letnich praktyk w IT, aby móc rozwijać swoje umiejętności techniczne w dynamicznym środowisku.</p>
+                        <p>Zajmuję się także wsparciem infrastruktury IT w Evian S.C., prowadziłem własną działalność e-commerce oraz aktywnie działam w Kole Naukowym Blockchain AGH, gdzie pogłębiam wiedzę z zakresu m.in. smart kontraktów i kryptografii.</p>
+                    </div>
+                    <img src="Images/profilowe.jpg" alt="Zdjęcie profilowe Oskara Fryca" class="profile-img">
+                </div>
+            </section>
+            
+            <hr>
+
+            <section class="container fade-in-section" id="sekcja-umiejetnosci">
+                <h2>Umiejętności i Technologie</h2>
+                <div class="skills-grid">
+                    <article class="skill-category">
+                        <h3><i class="fa-brands fa-python"></i> Języki</h3>
+                        <ul>
+                            <li>Python (Biegły)</li>
+                            <li>R (Biegły)</li>
+                            <li>SQL (Podstawy)</li>
+                            <li>HTML5 / CSS3</li>
+                        </ul>
+                    </article>
+                    <article class="skill-category">
+                        <h3><i class="fa-solid fa-cubes"></i> Frameworki i Biblioteki</h3>
+                        <ul>
+                            <li>Django & REST API</li>
+                            <li>Pandas & NumPy</li>
+                            <li>Scikit-Learn</li>
+                            <li>Streamlit & Matplotlib</li>
+                            <li>BeautifulSoup</li>
+                        </ul>
+                    </article>
+                    <article class="skill-category">
+                        <h3><i class="fa-solid fa-toolbox"></i> Narzędzia i Języki Obce</h3>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>Linux & VS Code</li>
+                            <li>MS Excel</li>
+                            <li>Język Angielski (B2+ Fluent)</li>
+                            <li>Język Polski (Ojczysty)</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="container fade-in-section" id="sekcja-projekty">
+                <h2>Projekty Portfolio</h2>
+                
+                <div class="filter-buttons">
+                    <button type="button" class="filter-btn active" data-filter="wszystkie">Wszystkie</button>
+                    <button type="button" class="filter-btn" data-filter="data">Data Science</button>
+                    <button type="button" class="filter-btn" data-filter="backend">Backend</button>
+                </div>
+
+                <div class="cards-wrapper">
+                    <!-- Projekt 1 -->
+                    <article class="card data">
+                        <div class="card-content">
+                            <h3>US Marine Fishing Analytics</h3>
+                            <p class="tech-stack">Python | Streamlit | Scikit-Learn | Pandas | REST API</p>
+                            <p>Interaktywny dashboard analityczny oparty na obszernych zbiorach danych federalnych NOAA. Stworzyłem potok ETL łączący dane o połowach z danymi środowiskowymi poprzez REST API. Zaimplementowałem modele Machine Learning (K-Means, Ridge Regression) w celu dostarczenia wniosków opartych na danych.</p>
+                        </div>
+                    </article>
+                    <!-- Projekt 2 -->
+                    <article class="card backend">
+                        <div class="card-content">
+                            <h3>Drone Watch Backend (Hack Yeah 2025)</h3>
+                            <p class="tech-stack">Python | Django | REST API | FFmpeg</p>
+                            <p>Rdzeń infrastruktury backendowej zbudowany w Django dla projektu "Gotham" podczas hackathonu. Zaprojektowałem endpointy API do obsługi przesyłania plików audio oraz zintegrowałem narzędzia pydub i FFmpeg do automatyzacji przetwarzania dźwięku i ekstrakcji metadanych.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="container fade-in-section" id="sekcja-kontakt">
+                <h2>Kontakt</h2>
+                <p>Aktywnie poszukuję możliwości letnich praktyk i staży. Chętnie porozmawiam o potencjalnej współpracy!</p>
+                
+                <div class="contact-grid">
+                    <a href="mailto:oskarfryc@gmail.com" class="contact-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>oskarfryc@gmail.com</span>
+                    </a>
+                    <a href="tel:+48535875261" class="contact-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+48 535 875 261</span>
+                    </a>
+                    <div class="contact-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Kraków, Polska</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/raksOtoOskar" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i> Mój GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin"></i> Mój LinkedIn</a>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>Oskar Fryc &copy; 2026. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <button id="powrot-na-gore" title="Wróć na górę" aria-label="Wróć na górę"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="main.js"></script>
+</body>
+</html>
